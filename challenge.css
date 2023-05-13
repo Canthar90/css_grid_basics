@@ -1,4 +1,6 @@
-.challenge-container{
+
+/* Method 1 Line numbers */
+/* .challenge-container{
     background-color: #eee;
     margin: 50px auto;
     width: 1200px;
@@ -37,4 +39,50 @@
 .footer{
     grid-column: 1 / -1;
     grid-row: 4 / 5;
+} */
+
+
+
+/* Method 2 naming lines */
+
+.challenge-container{
+    background-color: #eee;
+    margin: 50px auto;
+    width: 1200px;
+    height: 700px;
+    
+    display: grid;
+    grid-template-rows: [header-start] 1fr [header-end box-start] 2fr 
+    [box-end main-start] 4fr [main-end footer-start] 1fr [footer-end];
+    grid-template-columns: repeat(3, [col-start] 1fr [col-end]) 120px [grid-end];
+
+    row-gap: 15px;
+    column-gap: 15px;
+}
+
+.item {
+    padding: 10px;
+    font-size: 20px;
+    font-family: sans-serif;
+    color: white;
+    background-color: red;
+}
+
+.header {
+    grid-row: header-start / header-end;
+    grid-column: col-start 1 / grid-end;
+}
+
+.sidebar {
+    grid-column: col-end 3 / grid-end;
+    grid-row: box-start / main-end;
+}
+
+.main__content {
+    grid-column: col-start 1 / col-end 3;
+}
+
+.footer{
+    grid-column: col-start 1 / grid-end;
+    grid-row: footer-start / footer-end;
 }
