@@ -45,7 +45,7 @@
 
 /* Method 2 naming lines */
 
-.challenge-container{
+/* .challenge-container{
     background-color: #eee;
     margin: 50px auto;
     width: 1200px;
@@ -85,4 +85,58 @@
 .footer{
     grid-column: col-start 1 / grid-end;
     grid-row: footer-start / footer-end;
+} */
+
+/* -----------NAME GRID AREAS */
+.challenge-container{
+    background-color: #eee;
+    margin: 50px auto;
+    width: 1200px;
+    height: 700px;
+    
+    display: grid;
+    grid-template-rows: 1fr 2fr 4fr 1fr;
+    grid-template-columns: repeat(3, 1fr) 120px;
+
+    row-gap: 15px;
+    column-gap: 15px;
+
+    grid-template-areas: "head head head head"
+                        "box1 box2 box3 side"
+                        "main main main side"
+                        "foot foot foot foot";
+}
+
+.item {
+    padding: 10px;
+    font-size: 20px;
+    font-family: sans-serif;
+    color: white;
+    background-color: red;
+}
+
+.header {
+    grid-area: head;
+}
+
+.small-box-1 {
+    grid-area: box1;
+}
+.small-box-2{
+    grid-area: box2;
+}
+.small-box-3 {
+    grid-area: box3;
+}
+
+.sidebar {
+   grid-area: side;
+}
+
+.main__content {
+    grid-area: main;
+}
+
+.footer{
+    grid-area: foot;
 }
